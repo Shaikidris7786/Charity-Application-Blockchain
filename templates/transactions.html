@@ -1,0 +1,31 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    <title>Transactions Page</title>
+{% endblock %}
+
+{% block content %}
+<!-- <p>I am at Transactions page</p> -->
+<br>
+<h1>The Total Donation made is: {{total}} Ether</h1>
+<table style="width: 50%; margin: 0 auto;">
+    <thead>
+        <th>Donor Name</th>
+        <th>Donations</th>
+        <th>For Event</th>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.name }}</td>
+            <td>{{ row.donation }} Ether</td>
+            <td>{{ row.event }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+<form action="{{url_for('index')}}">
+    <p><input class = "form-submit" type="submit" value="Go to Home"/></p>
+</form>
+{% endblock %}

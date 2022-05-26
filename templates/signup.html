@@ -1,0 +1,26 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    <title>Sign-Up Page</title>
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+            <form method="POST" id="signup-form" class="signup-form" action="#">
+                <h2 class="form-title">Create account</h2>
+                <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"/>
+                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
+                <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
+                <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
+                <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                <p>Select your role.</p>
+                <input type="radio" id="html" name="position" value="organiser">
+                <label for="html">Organisation</label><br>
+                <input type="radio" id="html" name="position" value="donator">
+                <label for="html">Donator</label><br>
+            </form>
+            <p class="loginhere">
+                Already have an account ? <a href="{{url_for('login')}}" class="loginhere-link">Login here</a>
+            </p>
+        </div>
+{% endblock %}

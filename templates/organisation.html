@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    <title>Organisations Page</title>
+{% endblock %}
+
+{% block content %}
+<p>I am at Organisations page</p>
+<p>Create Events</p>
+<form action="#" method="POST" enctype="multipart/form-data">
+    <p><input class="input-control" type="text" name="Name" placeholder="Event Name" required/></p>
+    <p><input class="input-control" type="number" name="Amount" placeholder="Amount Needed" required/></p>
+    <p><input class = "form-submit" type="submit" value="Create"></p>
+</form>
+{% endblock %}

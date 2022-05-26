@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    <title>Success</title>
+{% endblock %}
+
+{% block content %}
+<p>Your Transaction has been a Success.</p>
+<p>Your Name is: {{name}}.</p>
+<p>And Your Contribution is: {{donation}} Ether.</p>
+
+<form action="{{url_for('index')}}">
+    <p><input class = "form-submit" type="submit" value="Go to Home"/></p>
+</form>
+{% endblock %}

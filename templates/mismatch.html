@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    <title>Error Page</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Your Passwords are mismatched.</h1>
+    <p>
+        Please go to the sign-up page.
+    </p>
+    <form action="{{url_for('signup')}}">
+        <p><input class = "form-submit" type="submit" value="Sign Up" /></p>
+    </form>
+{% endblock %}

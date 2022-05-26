@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    <title>Error Page</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Your account is already created.</h1>
+    <p>
+        Please go to the sign-in page.
+    </p>
+    <form action="{{url_for('login')}}">
+        <p><input class = "form-submit" type="submit" value="Login" /></p>
+    </form>
+{% endblock %}

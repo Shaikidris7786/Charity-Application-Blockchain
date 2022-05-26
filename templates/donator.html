@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    <title>Donations Page</title>
+{% endblock %}
+
+{% block content %}
+<!-- <p>I am at Donations page</p> -->
+<h1>Donate!</h1>
+<form action="#" method="POST" enctype="multipart/form-data">
+    <!-- <p><input class="input-control" type="text" name="Name" placeholder={{name}} required/></p> -->
+    <p><select class="input-control" name="Event" id="Event">
+            {% for event in eventName %}
+            <option value="{{event}}" SELECTED>{{event}}</option>
+            {% endfor %}
+    </select></p>
+    <p><input class="input-control" type="number" name="Donation" placeholder="Donation" required/></p>
+    <p><input class = "form-submit" type="submit" value="Submit"></p>
+</form>
+
+<form style="margin-top: 5rem" action="{{url_for('index')}}">
+    <p><input class = "form-submit" type="submit" value="Go to Home"/></p>
+</form>
+
+{% endblock %}
