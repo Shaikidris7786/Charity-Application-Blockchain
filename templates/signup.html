@@ -8,16 +8,18 @@
         <div class="container">
             <form method="POST" id="signup-form" class="signup-form" action="#">
                 <h2 class="form-title">Create account</h2>
-                <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"/>
-                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
-                <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
-                <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
-                <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                <input type="text" class="input-control" name="name" id="name" placeholder="Your Name"/>
+                <input type="email" class="input-control" name="email" id="email" placeholder="Your Email"/>
+                <input type="password" class="input-control" name="password" id="password" placeholder="Password"/>
+                <input type="password" class="input-control" name="re_password" id="re_password" placeholder="Repeat your password"/>
                 <p>Select your role.</p>
-                <input type="radio" id="html" name="position" value="organiser">
-                <label for="html">Organisation</label><br>
-                <input type="radio" id="html" name="position" value="donator">
-                <label for="html">Donator</label><br>
+                <div class="toggle">
+                    <input type="radio" name="position" value="organiser" id="html1" checked="checked"/>
+                    <label for="html1">Organisation</label>
+                    <input type="radio" name="position" value="donator" id="html2" checked="checked"/>
+                    <label for="html2">Donator</label>
+                  </div>
+                <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
             </form>
             <p class="loginhere">
                 Already have an account ? <a href="{{url_for('login')}}" class="loginhere-link">Login here</a>

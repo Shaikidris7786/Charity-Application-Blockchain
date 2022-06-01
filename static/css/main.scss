@@ -1,6 +1,7 @@
 :root{
     background: #7F7FD5;  /* fallback for old browsers */
-    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    // background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: radial-gradient( circle 759px at -6.7% 50%, rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgba(75,118,69,1) 100.3% );
     font-size: 1rem;
 }
 
@@ -43,3 +44,61 @@ table, th, td {
     box-shadow: 5px 5px 5px #eee;
     color: #fff;
 }
+
+/* MIXINS */
+@mixin focusOutline {outline: dotted 1px #CCC; outline-offset: .45rem;}
+@mixin hideInput {width: 0; height: 0; position: absolute; left: -9999px;}
+@mixin breakpoint($point) {
+  @if $point == 1100 {
+    @media (max-width: 1100px) { @content ; }
+  }
+  @else if $point == 800 {
+    @media (max-width: 800px) { @content ; }
+  }
+}
+
+// Toggle Styling
+.toggle {
+    margin: 0 0 1.5rem; box-sizing: border-box;
+    font-size: 0;
+    display: flex; 
+    flex-flow: row nowrap;
+    justify-content: center; 
+    align-items: stretch;
+    input {@include hideInput;}
+    input + label {
+      margin: 0; padding: .75rem 2rem; box-sizing: border-box;
+      position: relative; display: inline-block;
+      border: solid 1px #DDD; background-color: #FFF;
+      font-size: 1rem; line-height: 140%; font-weight: 600; text-align: center;
+      box-shadow: 0 0 0 rgba(255,255,255,0);
+      transition:   border-color .15s ease-out, 
+            color .25s ease-out, 
+            background-color .15s ease-out,
+            box-shadow .15s ease-out;
+      
+      /* ADD THESE PROPERTIES TO SWITCH FROM AUTO WIDTH TO FULL WIDTH */
+    //   flex: 0 0 50%; display: flex; justify-content: center; align-items: center;
+      /* ----- */
+      
+      &:first-of-type {border-radius: 6px 0 0 6px; border-right: none;}
+      &:last-of-type {border-radius: 0 6px 6px 0; border-left: none;}
+    }
+    input:hover + label {border-color: #213140;}
+    input:checked + label {
+      background-color: #4B9DEA;
+      color: #FFF;
+      box-shadow: 0 0 10px rgba(#66B3FB, .5);
+      border-color: #4B9DEA;
+      z-index: 1;
+    }
+    input:focus + label {@include focusOutline;}
+  
+    @include breakpoint(800) {
+      input + label {
+        padding: .75rem .25rem;
+        flex: 0 0 50%;
+        display: flex; justify-content: center; align-items: center;
+      }
+    }
+  }
