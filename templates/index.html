@@ -8,10 +8,10 @@
     <h1>Navigation Page!</h1>
     <h2>Choose your path and explore:</h2>
     <form action="#" method="post">
-        {% if role == 0 %}
+        {% if role|int == 0 %}
             <p><input class = "form-submit" type="submit" value="Create Event" name="Organisation"/></p>
         {% endif %}
-        {% if role == 1 %}
+        {% if role|int == 1 %}
             <p><input class = "form-submit" type="submit" value="Donate" name="Donator"/></p>
         {% endif %}
         <p><input class = "form-submit" type="submit" value="Transactions" name="Transactions"/></p>

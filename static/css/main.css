@@ -1,7 +1,10 @@
 :root {
-  background: #7F7FD5;
+  background: #DAD299;
   /* fallback for old browsers */
-  background-image: radial-gradient(circle 759px at -6.7% 50%, #508349 0%, #8cd183 26.2%, #b2e7aa 50.6%, #90d587 74.1%, #4b7645 100.3%);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#B0DAB9), to(#DAD299));
+  background: linear-gradient(to right, #B0DAB9, #DAD299);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-size: 1rem;
 }
 
@@ -43,7 +46,7 @@ table, th, td {
   font-size: inherit;
   border-radius: 15px;
   padding: .6rem .8rem;
-  margin: .1rem 0;
+  margin: .5rem 0;
   width: 40%;
   background-color: #2a2e35;
   -webkit-box-shadow: 5px 5px 5px #eee;
